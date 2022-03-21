@@ -1,0 +1,24 @@
+import java.io.*;
+import java.lang.*;
+class A
+{
+public static void main(String args[]) throws IOException
+{
+System.out.println("enter the number");
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int num=Integer.parseInt(br.readLine());
+int m=num;
+int rev=0;
+int k;
+for(int i=0;i<3;i++)
+{
+k=num%10;
+rev=rev*10+k;
+num=num/10;
+}
+if(rev==m)
+System.out.println("Palindrome");
+else
+System.out.println("Ordinary number");
+}
+}
