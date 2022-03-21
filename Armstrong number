@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.io.*;
+class A
+{
+public static void main(String args[]) throws IOException
+{
+System.out.println("enter the number");
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int n=Integer.parseInt(br.readLine());
+int m=n;
+int mul=0;
+int k;
+for(int i=0;i<3;i++)
+{
+k=n%10;
+mul=mul+(k*k*k);
+n=n/10;
+}
+if(mul==m)
+System.out.println("Armstrong number");
+else
+System.out.println("Normal number");
+
+}
+}
