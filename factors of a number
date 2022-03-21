@@ -1,0 +1,20 @@
+import java.lang.*;
+import java.io.*;
+class A
+{
+public static void main(String args[]) throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.println("enter the number");
+int num=Integer.parseInt(br.readLine());
+System.out.println("the factors are---");
+for(int i=1;i<=num/2;i++)
+{
+if(num%i==0)
+{
+
+System.out.println(i);
+}
+}
+}
+}
