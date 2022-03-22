@@ -1,0 +1,42 @@
+import java.lang.*;
+import java.io.*;
+class A
+{
+public static void main(String args[])
+{
+System.out.println("welcome to 3-d");
+int arr[][][]={
+{
+{12,23,34},{34,45,56} },
+{
+{11,22,33},{44,55,66}},
+{
+{77,88,99},{32,54,65}},
+};
+
+
+for(int i=0;i<3;i++)
+{
+if(i==0)
+System.out.println("CIVIL DEPARTMENT");
+if(i==1)
+System.out.println("COMPUTER SCIENCE DEPARTMENT");
+if(i==2)
+System.out.println("ELECTRICAL DEPARTMENT");
+
+for(int j=0;j<2;j++)
+{
+if(j==0)
+System.out.print("Student One marks:");
+if(j==1)
+System.out.print("Student Two marks:");
+for(int k=0;k<3;k++)
+{
+System.out.print(arr[i][j][k]+" ");
+}
+System.out.println();
+System.out.println();
+}
+}
+}
+}
