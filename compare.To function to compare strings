@@ -1,0 +1,14 @@
+import java.lang.*;
+class A
+{
+public static void main(String args[])
+{
+String s1="Aryan";
+String s2="Aryan";
+String s3="Bisht";
+System.out.println(s1.compareTo(s2));
+System.out.println(s1.compareTo(s3));
+System.out.println(s3.compareTo(s1));
+
+}
+}
