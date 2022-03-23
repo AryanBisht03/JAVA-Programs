@@ -1,0 +1,19 @@
+import java.lang.*;
+class A
+{
+public static void main(String args[])
+{
+String s="hello";
+String s1="hello";
+if(s.equals(s1))
+System.out.println("heloooooooooooo");
+else
+System.out.println("byeeeeeeeeeee");
+String a="aryan";
+String b="ArYaN";
+if(a.equalsIgnoreCase(b))
+System.out.println("aryan");
+else
+System.out.println("aaaauuuuuu");
+}
+}
