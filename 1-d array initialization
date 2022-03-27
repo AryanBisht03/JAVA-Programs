@@ -1,0 +1,29 @@
+import java.lang.*;
+import java.io.*;
+class A
+{
+public static void main(String args[]) throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int n;
+System.out.println("enter the number of elements you want in your array");
+n=Integer.parseInt(br.readLine());
+System.out.println("enter the  elements ");
+int arr[]=new int[n];
+for(int i=0;i<n;i++)
+{
+arr[i]=Integer.parseInt(br.readLine());
+}
+System.out.println("elements you have entered using for loop are--");
+for(int i=0;i<n;i++)
+{
+System.out.print(arr[i]+" ");
+}
+System.out.println();
+System.out.println("elements you have entered using for loop are--");
+for(int i:arr)
+{
+System.out.print(i+" ");
+}
+}
+}
