@@ -1,0 +1,42 @@
+import java.lang.*;
+import java.io.*;
+class A
+{
+public static void main(String args[]) throws IOException
+{
+int arr[][][]={{{50,51,52},{60,61,62}},
+                         {{70,71,72},{80,81,82}},
+                         {{65,66,67},{75,76,77}}};
+int total=0;
+double per=0;
+for(int i=0;i<3;i++)
+{
+if(i==0)
+System.out.println("Computer Science Department");
+if(i==1)
+System.out.println("Electrical Engineering Department");
+if(i==2)
+System.out.println("Mechanical Department");
+
+for(int j=0;j<2;j++)
+{
+if(j==0)
+System.out.print("Student 1:");
+if(j==1)
+System.out.print("Student 2:");
+
+for(int k=0;k<3;k++)
+{
+total=total+arr[i][j][k];
+per=(total/300.0)*100.0;
+System.out.print(arr[i][j][k]+" ");
+}
+System.out.print(total+" ");
+System.out.print(per);
+System.out.println();
+total=0;
+}
+System.out.println();
+}
+}
+}
