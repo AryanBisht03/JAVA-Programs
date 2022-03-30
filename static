@@ -1,0 +1,11 @@
+import java.lang.*;
+class A
+{
+static
+{
+System.out.println("heloo I am static and I will run first");
+}
+public static void main(String c[])
+{
+System.out.println("hy i am main and i will run later");
+}
