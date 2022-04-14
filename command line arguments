@@ -1,0 +1,32 @@
+import java.lang.*;
+import java.io.*;
+class Aryan 
+{
+private String name;
+private int age;
+Aryan(String s,int age1)
+{
+name=s;
+age=age1;
+}
+void check(int age)
+{
+if(age<=30)
+System.out.println("young");
+else if(age>30&&age<=50)
+System.out.println("thode buddhe");
+else
+System.out.println("old");
+}
+}
+class Aryan2
+{
+public static void main(String args[]) throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+String s=args[0];
+int i=Integer.parseInt(args[1]);
+Aryan obj1=new Aryan(s,i);
+obj1.check(i);
+}
+}
