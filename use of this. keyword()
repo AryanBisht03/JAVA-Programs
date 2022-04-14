@@ -1,0 +1,21 @@
+class A
+{
+private int x;
+A(int x)
+{
+this.x=x;
+System.out.println("the value of local x is "+this.x);
+}
+void display()
+{
+System.out.println("the value of x is "+x);
+}
+}
+class B
+{
+public static void main(String args[])
+{
+A r=new A(12);
+r.display();
+}
+}
