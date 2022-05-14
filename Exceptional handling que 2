@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.io.*;
+class A
+{
+public static void main(String args[])
+{
+//exceptional handling
+try
+{
+int a=12;
+int b=0;
+int c=a/b;
+System.out.println(c);
+int arr[]={12,23,34};
+arr[34]=33;
+System.out.println("hrllo");
+}
+catch(ArithmeticException | ArrayIndexOutOfBoundsException ae)
+{
+System.out.println(ae);
+}
+System.out.println("hello this is the code which is running after the exception is handeled");
+System.out.println("exceptional handling is very easy");
+}
+}
