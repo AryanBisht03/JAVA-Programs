@@ -1,0 +1,36 @@
+import java.lang.*;
+import java.io.*;
+class MyException extends Exception
+{
+private static int accno[]={1001,1002,1003,1004,1005};
+private static String name[]={"shruti","aryan","vedank","anubhav","manchanda"};
+private static double bal[]={12000.0,13000.0,14000.0,7890.0,453.0};
+MyException()
+{
+
+}
+MyException(String str)
+{
+super(str);
+} 
+public static void main(String args[])
+{
+try
+{
+System.out.println("Account No."+"\t"+"Name"+"\t"+"Balance");
+for(int i=0;i<5;i++)
+{
+System.out.println(accno[i]+"\t"+name[i]+"\t"+bal[i]);
+if(bal[i]<1000)
+{
+MyException me=new MyException("balance is less than 1000");
+throw me;
+}
+}
+}
+catch(MyException me)
+{
+me.printStackTrace();
+}
+}
+}
