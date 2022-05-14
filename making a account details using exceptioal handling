@@ -1,0 +1,48 @@
+import java.lang.*;
+import java.io.*;
+class MyException extends Exception
+{
+private static double netam=120000;
+private long accountno;
+private String name;
+private double balance;
+MyException()
+{
+
+}
+MyException(long  accountno,String name,double balance)
+{
+this.accountno=accountno;
+ this.name=name;
+ this.balance=balance;
+System.out.println("the account number is "+accountno);
+System.out.println("the account holder name is "+name);
+System.out.println("the account balance you want is "+balance);
+System.out.println("the amount left in your account is "+(netam-balance));
+}
+
+MyException(String str)
+{
+super(str);
+}
+public static void main(String args[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+long a=Long.parseLong(br.readLine());
+String name=br.readLine();
+double c=Double.parseDouble(br.readLine());
+try
+{
+MyException me=new MyException(a,name,c);
+if(c>netam)
+{
+me=new MyException("Your balance is low MotherFucker!!!");
+throw me;
+}
+}
+catch(MyException me)
+{
+me.printStackTrace();
+}
+}
+}
