@@ -1,0 +1,33 @@
+import java.lang.*;
+import java.io.*;
+class My extends Exception
+{
+int age;
+My(int age)
+{
+this.age=age;
+}
+public String toString()
+{
+return "age can not be negative "+age;
+}
+} 
+class A
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int age=Integer.parseInt(br.readLine());
+try{
+if(age<0)
+{
+My e=new My(age);
+throw e;
+}
+}
+catch(My e)
+{
+System.out.println(e);
+}
+}
+}
