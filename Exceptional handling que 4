@@ -1,0 +1,45 @@
+import java.lang.*;
+import java.io.*;
+class MyException extends Exception
+{
+String country;
+MyException(String s)
+{
+country=s;
+}
+public String toString()
+{
+return "Invalid country "+country;
+}
+}
+
+class A
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+String s1="INDIA";
+String s2;
+s2=br.readLine();
+try
+{
+if(s2.equalsIgnoreCase(s1))
+{
+MyException e=new MyException(s2);
+throw e;
+}
+else
+{
+System.out.println("Valid country");
+}
+}
+catch(MyException e)
+{
+System.out.println(e);
+}
+finally
+{
+br.close();
+}
+}
+}
