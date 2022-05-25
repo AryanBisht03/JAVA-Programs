@@ -1,0 +1,60 @@
+import java.lang.*;
+import java.io.*;
+class A extends Thread
+{
+public void run()
+{
+for(int i=0;i<100;i++)
+{
+System.out.println("im thread A: "+i);
+}
+System.out.println("exit from thread A");
+}
+}
+
+class B extends Thread
+{
+public void run()
+{
+for(int j=0;j<100;j++)
+{
+System.out.println("im thread B: "+j);
+}
+System.out.println("exit from thread B");
+}
+}
+
+class C extends Thread
+{
+public void run()
+{
+for(int k=0;k<100;k++)
+{
+System.out.println("im thread C: "+k);
+}
+System.out.println("exit from thread C");
+}
+}
+
+class D
+{
+public static void main(String args[])
+{
+A obj1=new A();
+B obj2=new B();
+C obj3=new C();
+obj1.setPriority(10);
+obj2.setPriority(5);
+obj3.setPriority(1);
+System.out.println("begin of A");
+obj1.start();
+
+System.out.println("begin of B");
+
+obj2.start();
+
+System.out.println("begin of C");
+obj3.start();
+
+}
+}
