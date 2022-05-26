@@ -1,0 +1,12 @@
+/Currently running thread 
+class Current 
+{ 
+ public static void main(String args[]) 
+ { 
+ System.out.println ("This is first statement"); 
+ Thread t = Thread.currentThread (); 
+ System.out.println ("Current Thread: " + t); 
+ System.out.println ("Its name: " + t.getName ()); 
+ System.out.println ("Its priority:" + t.getPriority ()); 
+ } 
+} 
