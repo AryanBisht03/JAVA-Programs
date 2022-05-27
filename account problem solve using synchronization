@@ -1,0 +1,49 @@
+import java.io.*;
+import java.lang.*;
+class A implements Runnable
+{
+int balance;
+int with;
+A(int with)
+{
+balance=5000;
+this.with=with;
+}
+
+synchronized public void run()
+{
+try
+{
+Thread.sleep(2000);
+}
+catch(Exception e)
+{
+}
+
+System.out.println("total amount availble: "+balance);
+if(with<=balance)
+{
+balance=balance-with;
+System.out.println("Withdrawn Balance: "+with);
+System.out.println("total balance available: "+balance);
+}
+else
+System.out.println("not enough amount in your account");
+}
+}
+
+
+class Main
+{
+public static void main(String args[])throws IOException
+{
+System.out.println("enter the amount to withdraw");
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int a=Integer.parseInt(br.readLine());
+A ob1=new A(a);
+Thread t1=new Thread(ob1,"Aryan");
+Thread t2=new Thread(ob1,"Shruti");
+t1.start();
+t2.start();
+}
+}
