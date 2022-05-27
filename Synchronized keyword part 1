@@ -1,0 +1,67 @@
+class A implements Runnable
+{
+synchronized public void run()
+{
+for(int i=0;i<10;i++)
+{
+try
+{
+System.out.println("good morning");
+Thread.sleep(2000);
+}
+catch(Exception e)
+{}
+}
+}
+}
+
+class B implements Runnable
+{
+synchronized public void run()
+{
+for(int j=0;j<10;j++)
+{
+try
+{
+System.out.println("hello");
+Thread.sleep(2000);
+}
+catch(Exception e)
+{}
+}
+}
+}
+
+class C implements Runnable
+{
+synchronized public void run()
+{
+for(int k=0;k<10;k++)
+{
+try
+{
+System.out.println("Bye");
+Thread.sleep(2000);
+}
+catch(Exception e)
+{}
+}
+}
+}
+
+class D
+{
+public static void main(String args[])
+{
+A ab=new A();
+B ab1=new B();
+C ab2=new C();
+Thread t1=new Thread(ab);
+Thread t2=new Thread(ab1);
+Thread t3=new Thread(ab2);
+t1.start();
+t2.start();
+t3.start();
+
+}
+}
