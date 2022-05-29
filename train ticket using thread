@@ -1,0 +1,50 @@
+import java.lang.*;
+import java.io.*;
+class A implements Runnable
+{
+int available=3;
+int wanted;
+A(int wanted)
+{
+this.wanted=wanted;
+}
+synchronized public void run()
+{
+try
+{
+Thread.sleep(2000);
+String name=Thread.currentThread().getName();
+if(wanted<=available)
+{
+
+System.out.println("you are granted the seats "+name);
+}
+else
+System.out.println("sorry!!! not available seats for u "+name);
+available=available-wanted;
+
+}
+catch(Exception e)
+{
+}
+
+System.out.println("Available seats "+available);
+}
+}
+class B
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int seat;
+System.out.println("enter the number of seats");
+seat=Integer.parseInt(br.readLine());
+A obj=new A(seat);
+Thread t1=new Thread(obj);
+Thread t2=new Thread(obj);
+t1.setName("Aryan");
+t2.setName("shruti");
+t1.start();
+t2.start();
+}
+}
